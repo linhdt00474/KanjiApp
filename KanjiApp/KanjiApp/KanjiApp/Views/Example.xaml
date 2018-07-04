@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+			 CloseWhenBackgroundIsClicked="False"
+             x:Class="KanjiApp.Views.Example">
+	<pages:PopupPage.Animation>
+		<animations:ScaleAnimation PositionIn="Bottom" PositionOut="Center" ScaleIn="1" ScaleOut="0.7"
+		DurationIn="700" EasingIn="BounceOut"/>
+	</pages:PopupPage.Animation>
+	<ScrollView
+    HorizontalOptions="Center"
+    VerticalOptions="Center" Margin="10">
+		<AbsoluteLayout>
+
+			<StackLayout AbsoluteLayout.LayoutFlags="SizeProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1" >
+				<Frame HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+               BackgroundColor="#f7f7f7" HasShadow="true" CornerRadius="10"
+               Padding="40,0,40,0" Margin="20,25,20,25">
+					<StackLayout Orientation="Vertical">
+						<Label Margin="0,10,0,0" Text="Ví dụ" FontAttributes="Bold" HorizontalOptions="Center" FontSize="24"/>
+						<Label Margin="0,10,0,0" Text="{Binding Example}" FontSize="18"/>
+						<Button Margin="5,20,5,10" BackgroundColor="#05b2ff" TextColor="White" Text="OK" FontSize="20" Clicked="OnCloseButtonTapped"/>
+					</StackLayout>
+				</Frame>
+				
+			</StackLayout>
+
+			<Frame HasShadow = "False" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0,0,72,72" 
+			Padding="0" BackgroundColor="Transparent" VerticalOptions="Fill" HorizontalOptions="Fill">
+				<Image Margin="0" Aspect="AspectFill" Source="pencil_ico.png"/>
+			</Frame>
+			<Frame HasShadow = "False"  AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.9, 0.15,11,11" 
+			Padding="0" BackgroundColor="Transparent" VerticalOptions="Fill" HorizontalOptions="Fill">
+				<Image Margin="0" Aspect="AspectFill" Source="close_btn.png"/>
+				<Frame.GestureRecognizers>
+					<TapGestureRecognizer Tapped="OnCloseButtonTapped"/>
+				</Frame.GestureRecognizers>
+			</Frame>
+		</AbsoluteLayout>
+	</ScrollView>
+</pages:PopupPage>

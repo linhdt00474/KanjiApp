@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+				  xmlns:local="clr-namespace:KanjiApp.CustomControls"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="KanjiApp.Views.SideMenu">
+
+	<MasterDetailPage.Master>
+		<ContentPage Title="Menu">
+			<StackLayout BackgroundColor="White" Padding="0">
+				<Image Source="menu_background.jpg" Aspect="Fill"/>
+				<local:CustomListView x:Name="MenuItemListView" ItemsSource="{Binding MenuItems}" SeparatorVisibility="None" RowHeight="60" ItemClickCommand="{Binding MenuItemClickCommand}">
+
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<StackLayout Orientation="Vertical">
+									<StackLayout VerticalOptions="Fill" Orientation="Horizontal" Padding="40,10,0,10" Spacing="20">
+										<Image Source="{Binding Image}" WidthRequest="25" HeightRequest="25" VerticalOptions="Center" />
+										<Label Text="{Binding Text}" FontSize="22" VerticalOptions="Start" HorizontalOptions="Start" TextColor="#707070" Margin="0"/>
+									</StackLayout>
+									<BoxView HeightRequest="2" Color="#d5d5d5" HorizontalOptions="FillAndExpand" Margin="8,0,8,0" IsVisible="{Binding IsSeparatorVisible}"/>
+								</StackLayout>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+
+				</local:CustomListView>
+			</StackLayout>
+		</ContentPage>
+	</MasterDetailPage.Master>
+
+</MasterDetailPage>

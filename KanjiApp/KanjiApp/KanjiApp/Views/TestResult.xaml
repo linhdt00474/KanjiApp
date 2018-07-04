@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+			 Title="Kết quả"
+             x:Class="KanjiApp.Views.TestResult">
+	<Grid ColumnSpacing="0" RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="5*" />
+			<RowDefinition Height="4*" />
+			<RowDefinition Height="1*" />
+		</Grid.RowDefinitions>
+		<StackLayout Grid.Row="0">
+			<Label HorizontalTextAlignment="Center" Text="OOPS! Có vẻ chưa chuẩn lắm!" Margin="0,30,0,0"></Label>
+			<Image Source="test_result_low.png"></Image>
+		</StackLayout>
+		<StackLayout Grid.Row="1">
+			<Label HorizontalTextAlignment="Center" Text="Điểm của bạn"></Label>
+			<Label HorizontalTextAlignment="Center" Text="5/10" FontSize="Large"></Label>
+			<Label HorizontalTextAlignment="Center" Text="Click vào để xem chi tiết"></Label>
+		</StackLayout>
+		<StackLayout Grid.Row="2" Orientation="Horizontal" Margin="5">
+			<Button Text="Làm lại" WidthRequest="180"></Button>
+			<Button Text="Trở về danh sách" WidthRequest="180"></Button>
+		</StackLayout>
+	</Grid>
+</ContentPage>

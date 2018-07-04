@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+			 Title="Cài đặt"
+             x:Class="KanjiApp.Views.Settings">
+	<Grid ColumnSpacing="0" RowSpacing="0">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="AUTO" />
+			<RowDefinition Height="AUTO" />
+			<RowDefinition Height="AUTO" />
+			<RowDefinition Height="AUTO" />
+			<RowDefinition Height="AUTO" />
+		</Grid.RowDefinitions>
+		
+		<Label Grid.Row="0" Text="Số lượng câu hỏi trong phần kiểm tra" FontSize="Medium" HorizontalOptions="Center"></Label>
+		
+		<StackLayout Orientation="Horizontal" Grid.Row="1" HorizontalOptions="Center" Spacing="-6">
+			<Button Text="5" x:Name="btnOption1" BackgroundColor="White" BorderColor="Blue" TextColor="Blue" Margin="0" Clicked="btnOption1_OnClicked"></Button>
+			<Button Text="10" x:Name="btnOption2" BackgroundColor="White" BorderColor="Blue" TextColor="Blue" Margin="0" Clicked="btnOption2_OnClicked"></Button>
+			<Button Text="15" x:Name="btnOption3" BackgroundColor="White" BorderColor="Blue" TextColor="Blue" Margin="0" Clicked="btnOption3_OnClicked"></Button>
+		</StackLayout>
+
+		<Label Grid.Row="2" Text="Thời gian mỗi câu hỏi" FontSize="Medium" HorizontalOptions="Center"></Label>
+
+		<StackLayout Orientation="Horizontal" Grid.Row="3" HorizontalOptions="Center" Spacing="-6">
+			<Button Text="15 s" x:Name="btnOption4" BackgroundColor="White" BorderColor="Blue" TextColor="Blue" Margin="0" Clicked="btnOption4_OnClicked"></Button>
+			<Button Text="20 s" x:Name="btnOption5" BackgroundColor="White" BorderColor="Blue" TextColor="Blue" Margin="0" Clicked="btnOption5_OnClicked"></Button>
+			<Button Text="30 s" x:Name="btnOption6" BackgroundColor="White" BorderColor="Blue" TextColor="Blue" Margin="0" Clicked="btnOption6_OnClicked"></Button>
+		</StackLayout>
+	</Grid>
+</ContentPage>
